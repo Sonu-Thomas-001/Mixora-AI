@@ -47,8 +47,8 @@ const Library: React.FC<LibraryProps> = ({ onLoadTrack }) => {
   );
 
   return (
-    <div className="flex flex-col h-full bg-neon-panel border-r border-white/10">
-      <div className="p-4 border-b border-white/10 bg-black/20">
+    <div className="flex flex-col h-full bg-neon-panel border-r border-white/10 w-full">
+      <div className="p-4 border-b border-white/10 bg-black/20 shrink-0">
         <h2 className="text-white font-display font-bold text-lg mb-4 flex items-center gap-2">
           <Music className="w-5 h-5 text-neon-green" /> LIBRARY
         </h2>
@@ -73,7 +73,7 @@ const Library: React.FC<LibraryProps> = ({ onLoadTrack }) => {
 
       <div className="flex-1 overflow-y-auto">
         <table className="w-full text-left border-collapse">
-          <thead>
+          <thead className="sticky top-0 bg-neon-panel z-10">
             <tr className="text-xs text-gray-500 border-b border-white/5">
               <th className="p-3 font-medium">TITLE</th>
               <th className="p-3 font-medium w-16">BPM</th>

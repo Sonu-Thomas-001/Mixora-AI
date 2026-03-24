@@ -11,6 +11,13 @@ export interface Track {
   duration: number;
 }
 
+export interface StemLevels {
+  vocals: number;
+  drums: number;
+  bass: number;
+  melody: number;
+}
+
 export interface DeckState {
   track: Track | null;
   isPlaying: boolean;
@@ -19,6 +26,9 @@ export interface DeckState {
   currentTime: number;
   loopActive: boolean;
   fxActive: boolean;
+  stems: StemLevels;
+  remixGenre?: string;
+  activePads: number[];
 }
 
 export type DeckId = 'A' | 'B';
@@ -28,6 +38,12 @@ export interface AIAnalysis {
   suggestedTransition: string;
   keyCompatibility: 'Harmonic' | 'Compatible' | 'Clash';
   energyChange: 'Build Up' | 'Drop' | 'Consistent' | 'Chill';
+}
+
+export interface CrowdState {
+  energy: number; // 0-100
+  engagement: number; // 0-100
+  mood: 'Hyped' | 'Vibing' | 'Chill' | 'Bored';
 }
 
 export enum ViewMode {

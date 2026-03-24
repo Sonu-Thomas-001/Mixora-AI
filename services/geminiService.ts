@@ -4,7 +4,7 @@ import { Track, AIAnalysis } from '../types';
 let ai: GoogleGenAI | null = null;
 
 try {
-    ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+    ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY || '' });
 } catch (e) {
     console.error("Failed to initialize Gemini Client", e);
 }
